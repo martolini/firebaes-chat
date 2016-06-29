@@ -1,4 +1,6 @@
 import firebase from 'firebase'
+import Promise from 'bluebird'
+window.Promise = Promise
 
 const fireConfig = {
   apiKey: "AIzaSyA3KMNti8wWxOKM64e3tjZuMOvRU0kUQSI",

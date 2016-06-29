@@ -1,0 +1,131 @@
+.friends-container {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 5px;
+  background: #39393B;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 20px;
+  width: 80%;
+  .edgechat {
+    .friends-list {
+      width: 15%;
+      float: left;
+
+      .notification {
+        font-size: 2.2rem;
+        text-align: center;
+        padding-top: 8px;
+        padding-bottom: 2px;
+      }
+
+      ul {
+        list-style: none;
+        padding-top: 8px;
+        padding-left: 0;
+        font-size: 1.4rem;
+        li {
+          cursor: pointer;
+          padding-left: 20px;
+          padding-bottom: 5px;
+          padding-top: 5px;
+          i {
+            padding-right: 5px;
+
+            &.online {
+              color: #4caf50;
+            }
+          }
+
+          &:hover {
+            background-color: #252527;
+          }
+
+          &.selected {
+            background: #7897C6;
+          }
+        }
+      }
+    }
+
+    .chat-container {
+      color: black;
+      float: left;
+      width: 85%;
+      background: white;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      height: 500px;
+
+      .chat-notification {
+        position: absolute;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .chat-header {
+        padding: 10px;
+        border-bottom: 2px solid #cecece;
+
+        h4 {
+          width: 50%;
+          float: left;
+        }
+
+        i {
+          font-size: 22px;
+          float: right;
+          margin-top: 15px;
+          margin-right: 25px;
+          cursor: pointer;
+        }
+      }
+
+      ul.chat-history {
+        list-style: none;
+        padding-left: 20px;
+        padding-top: 10px;
+        height: 320px;
+        overflow-y: scroll;
+
+        li {
+          padding-top: 10px;
+          &.collapsed {
+            padding-top: 0;
+          }
+          .author {
+            font-size: 16px;
+            font-weight: 800;
+            margin-right: 5px;
+          }
+
+          span.time {
+            font-size: 1.2rem;
+          }
+
+          span.main {
+            margin-left: 3%
+          }
+        }
+      }
+
+      .chat-input {
+        padding-left: 20px;
+        padding-right: 20px;
+        textarea {
+          width: 100%;
+          border: none;
+          padding: 10px 20px;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          resize: none;
+          box-shadow: none;
+          background: #f1f2f7;
+        }
+      }
+    }
+  }
+}

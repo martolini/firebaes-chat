@@ -30,6 +30,22 @@ export default (state=initialState, action) => {
       }
     case 'LOG_OUT':
       return initialState
+    case 'FETCH_USER_REQUEST':
+      return {
+        ...state,
+        loading: true
+      }
+    case 'USER_FETCHED':
+      return {
+        ...state,
+        loading: false,
+        user: action.user
+      }
+    case 'USER_CHANGED':
+      return {
+        ...state,
+        user: action.user
+      }
     default:
       return state
   }

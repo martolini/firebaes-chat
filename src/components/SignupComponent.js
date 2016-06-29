@@ -20,10 +20,12 @@ class SignupComponent extends React.Component {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
         return firebase.database().ref('users').child(user.uid).set({
-          createdAt: firebase.ServerValue.TIMESTAMP,
-          username: user.email.split('@')[0]
+          createdAt: firebase.database.ServerValue.TIMESTAMP,
+          displayName: user.email.split('@')[0],
+          id: user.uid
         }).then(() => dispatch(loginSuccess(user.uid)))
       }).catch((err) => {
+        console.log('Got error in signup component', err.stack)
         dispatch(loginError(err.message))
       })
   }
@@ -31,12 +33,12 @@ class SignupComponent extends React.Component {
   render() {
     return (
       <form onSubmit={this.onSubmit.bind(this)}>
-        <input type='email'
+        <input className='form-control' type='email'
           onChange={(e) => this.setState({email: e.target.value})}
           placeholder='email'
           required
         />
-        <input type='password'
+        <input className='form-control' type='password'
           onChange={(e) => this.setState({password: e.target.value})}
           placeholder='****'
           required

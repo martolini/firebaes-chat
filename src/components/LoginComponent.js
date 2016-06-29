@@ -27,12 +27,12 @@ class LoginComponent extends React.Component {
     const { loading, error } = this.props.auth
     return (
       <form onSubmit={this.onSubmit.bind(this)}>
-        <input type='email'
+        <input className='form-control' type='email'
           onChange={(e) => this.setState({email: e.target.value})}
           placeholder='email'
           required
         />
-        <input type='password'
+        <input className='form-control' type='password'
           onChange={(e) => this.setState({password: e.target.value})}
           placeholder='****'
           required
