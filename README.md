@@ -2,31 +2,6 @@
 Sample repo for a chat built with react, redux and firebase
 
 ## firebase-structure
-- users/
-  - displayName
-- chatroom-metadata
-  - chatroom-id
-    - createdAt
-    - createdBy
-    - id
-    - name
-- chatroom-members/
-  - chatroom-id
-    - userId: displayName
-- user-chatrooms/
-  - userId
-    - chatroom-id: true
-- chatroom-messages/
-  - chatroom-id
-- chatroom-invites/
-  - toUserId/
-    - chatroom1: true
-    - chatroom2: true
-
-
-# firebase-friends-chat
-
-## firebase-structure
 
 - users/
   - displayName
@@ -37,6 +12,7 @@ Sample repo for a chat built with react, redux and firebase
       - id
       - displayName
       - pending
+      - chatroom
 
 - friend-requests/
   - toId/
@@ -44,3 +20,13 @@ Sample repo for a chat built with react, redux and firebase
       - id
       - displayName
       - timestamp
+      - chatroom
+
+- friend-messages/
+  - chatroom/
+    - messageId
+      - author
+        - id
+        - name
+      - createdAt
+      - text
